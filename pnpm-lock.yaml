@@ -168,6 +168,9 @@ importers:
       '@eslint/eslintrc':
         specifier: ^3
         version: 3.3.1
+      '@next/env':
+        specifier: ^16.0.1
+        version: 16.0.1
       '@types/bcryptjs':
         specifier: ^2.4.6
         version: 2.4.6
@@ -731,6 +734,9 @@ packages:
 
   '@next/env@15.1.2':
     resolution: {integrity: sha512-Hm3jIGsoUl6RLB1vzY+dZeqb+/kWPZ+h34yiWxW0dV87l8Im/eMOwpOA+a0L78U0HM04syEjXuRlCozqpwuojQ==}
+
+  '@next/env@16.0.1':
+    resolution: {integrity: sha512-LFvlK0TG2L3fEOX77OC35KowL8D7DlFF45C0OvKMC4hy8c/md1RC4UMNDlUGJqfCoCS2VWrZ4dSE6OjaX5+8mw==}
 
   '@next/eslint-plugin-next@15.1.0':
     resolution: {integrity: sha512-+jPT0h+nelBT6HC9ZCHGc7DgGVy04cv4shYdAe6tKlEbjQUtwU3LzQhzbDHQyY2m6g39m6B0kOFVuLGBrxxbGg==}
@@ -4581,6 +4587,8 @@ snapshots:
   '@next/env@15.1.0': {}
 
   '@next/env@15.1.2': {}
+
+  '@next/env@16.0.1': {}
 
   '@next/eslint-plugin-next@15.1.0':
     dependencies:
