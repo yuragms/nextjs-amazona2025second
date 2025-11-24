@@ -1,11 +1,54 @@
+// import React from 'react'
+// import { Star } from 'lucide-react'
+
+// interface StarRatingProps {
+//   rating: number
+// }
+
+// export default function Component({ rating = 4.3 }: StarRatingProps) {
+//   const fullStars = Math.floor(rating)
+//   const partialStar = rating % 1
+//   const emptyStars = 5 - Math.ceil(rating)
+
+//   return (
+//     <div
+//       className='flex items-center'
+//       aria-label={`Rating: ${rating} out of 5 stars`}
+//     >
+//       {[...Array(fullStars)].map((_, i) => (
+//         <Star
+//           key={`full-${i}`}
+//           className='w-6 h-6 fill-yellow-400 text-yellow-400'
+//         />
+//       ))}
+//       {partialStar > 0 && (
+//         <div className='relative'>
+//           <Star className='w-6 h-6 text-yellow-400' />
+//           <div
+//             className='absolute top-0 left-0 overflow-hidden'
+//             style={{ width: `${partialStar * 100}%` }}
+//           >
+//             <Star className='w-6 h-6 fill-yellow-400 text-yellow-400' />
+//           </div>
+//         </div>
+//       )}
+//       {[...Array(emptyStars)].map((_, i) => (
+//         <Star key={`empty-${i}`} className='w-6 h-6 text-gray-300' />
+//       ))}
+//     </div>
+//   )
+// }
+
 import React from 'react'
 import { Star } from 'lucide-react'
 
-interface StarRatingProps {
+export default function Rating({
+  rating = 0,
+  size = 6,
+}: {
   rating: number
-}
-
-export default function Component({ rating = 4.3 }: StarRatingProps) {
+  size?: number
+}) {
   const fullStars = Math.floor(rating)
   const partialStar = rating % 1
   const emptyStars = 5 - Math.ceil(rating)
@@ -18,22 +61,25 @@ export default function Component({ rating = 4.3 }: StarRatingProps) {
       {[...Array(fullStars)].map((_, i) => (
         <Star
           key={`full-${i}`}
-          className='w-6 h-6 fill-yellow-400 text-yellow-400'
+          className={`w-${size} h-${size} fill-primary text-primary`}
         />
       ))}
       {partialStar > 0 && (
         <div className='relative'>
-          <Star className='w-6 h-6 text-yellow-400' />
+          <Star className={`w-${size} h-${size} text-primary`} />
           <div
             className='absolute top-0 left-0 overflow-hidden'
             style={{ width: `${partialStar * 100}%` }}
           >
-            <Star className='w-6 h-6 fill-yellow-400 text-yellow-400' />
+            <Star className='w-6 h-6 fill-primary text-primary' />
           </div>
         </div>
       )}
       {[...Array(emptyStars)].map((_, i) => (
-        <Star key={`empty-${i}`} className='w-6 h-6 text-gray-300' />
+        <Star
+          key={`empty-${i}`}
+          className={`w-${size} h-${size}  text-primary`}
+        />
       ))}
     </div>
   )
