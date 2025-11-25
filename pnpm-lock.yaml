@@ -108,7 +108,7 @@ importers:
         specifier: ^3.26.3
         version: 3.26.5(next@15.1.0(@babel/core@7.24.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)
       next-themes:
-        specifier: ^0.4.4
+        specifier: ^0.4.6
         version: 0.4.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       query-string:
         specifier: ^9.1.1
