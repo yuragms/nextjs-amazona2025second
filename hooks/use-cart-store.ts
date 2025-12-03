@@ -18,7 +18,6 @@ const initialState: Cart = {
 interface CartState {
   cart: Cart
   addItem: (item: OrderItem, quantity: number) => Promise<string>
-
   updateItem: (item: OrderItem, quantity: number) => Promise<void>
   removeItem: (item: OrderItem) => void
   clearCart: () => void
@@ -71,13 +70,16 @@ const useCartStore = create(
             })),
           },
         })
-        // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-        return updatedCartItems.find(
+        const foundItem = updatedCartItems.find(
           (x) =>
             x.product === item.product &&
             x.color === item.color &&
             x.size === item.size
-        )?.clientId!
+        )
+        if (!foundItem) {
+          throw new Error('Item not found in cart')
+        }
+        return foundItem.clientId
       },
       updateItem: async (item: OrderItem, quantity: number) => {
         const { items, shippingAddress } = get().cart
@@ -138,7 +140,6 @@ const useCartStore = create(
           },
         })
       },
-
       setPaymentMethod: (paymentMethod: string) => {
         set({
           cart: {
@@ -171,6 +172,7 @@ const useCartStore = create(
       },
       init: () => set({ cart: initialState }),
     }),
+
     {
       name: 'cart-store',
     }
