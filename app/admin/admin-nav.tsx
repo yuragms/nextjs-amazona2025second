@@ -27,10 +27,6 @@ const links = [
     href: '/admin/web-pages',
   },
   {
-    title: 'Carousel',
-    href: '/admin/carousels',
-  },
-  {
     title: 'Settings',
     href: '/admin/settings',
   },
