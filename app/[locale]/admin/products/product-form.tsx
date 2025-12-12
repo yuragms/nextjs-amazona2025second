@@ -124,7 +124,6 @@ const ProductForm = ({
 
   const images = form.watch('images')
 
-  console.log(form.formState.errors)
   return (
     <Form {...form}>
       <form
